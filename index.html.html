@@ -1,139 +1,153 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Anomalia Storytelling</title>
-<style>
-  * { margin:0; padding:0; box-sizing:border-box; }
-  html { scroll-behavior: smooth; }
-  body { font-family: 'Arial', sans-serif; line-height:1.6; background:#111; color:#f1f1f1; }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anomalia Storytelling</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #000;
+      color: #ff69b4;
+      font-family: 'Verdana', 'Arial', sans-serif;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
 
-  /* Header */
-  header {
-    position: fixed;
-    top:0; left:0; width:100%;
-    background: rgba(0,0,0,0.9);
-    padding: 20px 0;
-    z-index: 100;
-    text-align:center;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
-  }
-  header h1 { font-size:2.5rem; color:#e91e63; transition:0.3s; }
-  header h1:hover { color:#ffeb3b; }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 30px;
+    }
 
-  /* Navigation */
-  nav { margin-top:10px; }
-  nav a {
-    color:#f1f1f1; text-decoration:none; margin:0 10px;
-    padding:8px 15px; border:1px solid #e91e63; border-radius:5px;
-    transition:0.3s;
-  }
-  nav a:hover { background:#e91e63; color:#fff; }
+    h1 {
+      text-align: center;
+      font-size: 3em;
+      margin-bottom: 50px;
+      text-shadow: 2px 2px #ff1493;
+      animation: glow 2s ease-in-out infinite alternate;
+    }
 
-  /* Sections */
-  section { padding:120px 20px 60px; max-width:900px; margin:0 auto; opacity:0; transform:translateY(50px); transition: all 0.8s ease; }
-  section.visible { opacity:1; transform:translateY(0); }
-  section h2 { color:#e91e63; margin-bottom:20px; text-align:center; }
-  section p { margin-bottom:15px; font-size:1.1rem; }
-  blockquote { font-style:italic; color:#ffeb3b; margin:20px 0; padding-left:20px; border-left:3px solid #ffeb3b; }
+    h2 {
+      font-size: 1.8em;
+      margin-top: 40px;
+      margin-bottom: 15px;
+      border-left: 5px solid #ff69b4;
+      padding-left: 10px;
+      text-shadow: 1px 1px #ff1493;
+    }
 
-  /* Footer */
-  footer { text-align:center; padding:30px 20px; background:#0d0d0d; color:#aaa; margin-top:40px; }
+    p {
+      margin-bottom: 15px;
+      padding-left: 10px;
+      transition: transform 0.2s;
+    }
 
-  /* Animation delay (staggered fade-in) */
-  section:nth-of-type(odd) { transition-delay: 0.2s; }
-  section:nth-of-type(even) { transition-delay: 0.4s; }
-</style>
+    p:hover {
+      transform: scale(1.02);
+    }
+
+    blockquote {
+      margin: 30px 0;
+      padding: 15px 25px;
+      border-left: 6px solid #ff1493;
+      background: rgba(255, 105, 180, 0.1);
+      font-style: italic;
+      font-size: 1.1em;
+      line-height: 1.5;
+      transition: background 0.3s;
+    }
+
+    blockquote:hover {
+      background: rgba(255, 105, 180, 0.2);
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 2px 2px #ff1493, 0 0 10px #ff69b4;
+      }
+      to {
+        text-shadow: 2px 2px #ff1493, 0 0 20px #ff1493;
+      }
+    }
+
+    a {
+      color: #ff69b4;
+      text-decoration: none;
+      border-bottom: 1px dashed #ff1493;
+    }
+
+    a:hover {
+      color: #ff1493;
+      border-bottom: 1px solid #ff69b4;
+    }
+
+    .year {
+      display: inline-block;
+      background-color: #ff1493;
+      color: #000;
+      padding: 2px 8px;
+      margin-right: 10px;
+      font-weight: bold;
+      border-radius: 4px;
+      font-family: 'Courier New', monospace;
+    }
+  </style>
 </head>
 <body>
 
-<header>
-  <h1>Anomalia Storytelling</h1>
-  <nav>
-    <a href="#2016">2016</a>
-    <a href="#2017">2017</a>
-    <a href="#2018">2018</a>
-    <a href="#2019">2019</a>
-    <a href="#2020">2020</a>
-    <a href="#2022">2022</a>
-    <a href="#2023">2023</a>
-    <a href="#2024">2024</a>
-    <a href="#2025">2025</a>
-    <a href="#projets">Projets</a>
-  </nav>
-</header>
+  <div class="container">
+    <h1>Anomalia Storytelling</h1>
 
-<section id="2016">
-  <h2>2016 : Two Human Mistakes - Fusion & Human Mistake Records</h2>
-  <p>C'est deux amies, deux rivaux, deux inconnues, deux personnes qui se sont trouvées comme deux personnes perdues. L'histoire commence avec deux erreurs humaines.  
-  Née d'une passion commune et d'une envie de faire quelque chose de différent, Tom B et Simon G se renferment pendant toute une semaine d'été pour composer leur 1er LP...</p>
-</section>
+    <h2><span class="year">2016</span>Two Human Mistakes & Fusion</h2>
+    <p>Tout a commencé avec deux amies, deux rivales, deux inconnues… deux personnes perdues qui se trouvent. C’est l’histoire de deux erreurs humaines qui se rencontrent.</p>
+    <p>Nées d’une passion commune et de l’envie de créer quelque chose de différent, Tom B et Simon G se renferment pendant une semaine entière d’été pour composer leur premier LP, Fusion. L’album raconte une rupture, mêlant l’histoire vécue par l’un et le futur de l’autre, avec une vision du monde sombre et un peu négative.</p>
+    <p>Fusion naît d’une volonté de se confronter aux autres et de créer leur propre bulle artistique. Les deux amies lancent leur propre label, Human Mistake Records, qui continue jusqu’en 2018, totalisant 8 réalisations avant l’arrivée d’Anomalia. Le label existe toujours, en secret, pour accueillir de nouvelles sorties.</p>
 
-<section id="2017">
-  <h2>2017 : ??? - Anomalia</h2>
-  <p>Simon G écrit et compose probablement le morceau qui le représente le mieux, <strong>Call Two Point Five</strong>...</p>
-</section>
+    <h2><span class="year">2017</span>Anomalia & Call Two Point Five</h2>
+    <p>Simon G cherche à écrire la suite de son histoire. C’est là que naît le morceau Call Two Point Five, initialement nommé Anomalia, en référence à la rupture racontée dans Fusion. Finalement, le titre change, mais le morceau reste longtemps dans les fichiers de l’artiste, qui ne se sent pas prêt à l’exposer.</p>
+    <p>Si Fusion laissait une note mélancolique, Call Two Point Five resurgit avec toute l’agressivité et la vision sombre de l’artiste. Sept minutes uniques qui marquent une étape importante dans son univers.</p>
 
-<section id="2018">
-  <h2>2018 : Anomalia - Second Breath</h2>
-  <p>Toujours en attendant de pouvoir sortir Call Two Point Five dans de bonnes conditions, la vie de l'artiste continue...</p>
-</section>
+    <h2><span class="year">2018</span>Second Breath</h2>
+    <p>Pendant ce temps, la vie continue. Simon G retrouve son premier amour, la cuisine, travaille dur, accumule responsabilités et nouvelles rencontres. Cette énergie nouvelle se retrouve dans Second Breath, un album intense, comme une marche à pied en montée : difficile, chargé, mais qui redonne toute son énergie à la fin, comme un second souffle.</p>
+    <p>L’album reste privé, stocké dans ses fichiers, mais marque une étape cruciale dans sa créativité.</p>
 
-<section id="2019">
-  <h2>2019 : Elevate & Collision</h2>
-  <p>L'artiste se lance dans deux énormes projets sur Lyon : Elevate et Collision, associations dans le milieu du son...</p>
-</section>
+    <h2><span class="year">2019</span>Elevate & Collision</h2>
+    <p>Fatigué, saturé, l’idée de partir à Paris surgit, mais la fête et les vices retardent le départ. Finalement, rester à Lyon se révèle être la meilleure décision. Simon G se lance alors dans deux gros projets locaux : Elevate et Collision, des associations dans le milieu du son.</p>
+    <p>Si Fusion a trouvé un écho en Angleterre, c’est grâce à Collision et Elevate que l’artiste commence à créer sa communauté à Lyon.</p>
 
-<section id="2020">
-  <h2>2020 : Anomalia - Second Breath & Call Two Point Five</h2>
-  <p>Après la pause, l'artiste sort enfin ses deux gros projets...</p>
-</section>
+    <h2><span class="year">2020</span>Call Two Point Five & Second Breath</h2>
+    <p>Le confinement prend fin, et Simon G peut enfin sortir ses deux gros projets : Call Two Point Five et Second Breath. Le succès est discret, mais l’artiste continue, travaillant sur son bébé : ANO, l’album perdu.</p>
 
-<section id="2022">
-  <h2>2022 : Anomalia - A.N.O</h2>
-  <p>Malgré l’absence de succès, l’artiste continue et prépare 3 nouveaux projets pour 2023...</p>
-</section>
+    <h2><span class="year">2020 (bis)</span>ANO</h2>
+    <p>Travaillant sur ANO, Simon G est rattrapé par la vie : son ordinateur plante, deux ans de travail disparaissent. Dans un moment de rage, il cherche partout : clés USB, disques durs, SoundCloud, WeTransfer. Il ne retrouve pas tout, mais il récupère 25 morceaux. Après un tri minutieux, l’album renaît devant lui.</p>
 
-<section id="2023">
-  <h2>2023 : Anomalia - Switch Beat EP</h2>
-  <p>Switch EP condense l’album précédent en seulement deux morceaux forts...</p>
-</section>
+    <h2><span class="year">2022</span>A.N.O</h2>
+    <p>L’album A.N.O sort, mais sans grand succès. L’artiste continue son chemin, préparant 2023 avec trois nouveaux projets : Switch Beat EP, New House EP, New Techno EP, et un projet secret, avant d’annoncer la fin anticipée d’Anomalia.</p>
 
-<section id="2024">
-  <h2>2024 : New House EP & New Techno EP</h2>
-  <p>Continuation de la construction des morceaux avec des schémas plus simples...</p>
-</section>
+    <h2><span class="year">2023</span>Switch Beat EP</h2>
+    <p>Après 25 titres conséquents dans l’album précédent, Switch Beat EP condense l’histoire en deux morceaux forts, avec beaucoup de transitions. L’objectif : déconstruire la musique électronique et l’ouvrir à de nouveaux styles, tout en gardant un fil narratif cohérent.</p>
 
-<section id="2025">
-  <h2>2025 : Anomalia - No Silence & Hard Summer EP</h2>
-  <p><strong>No Silence</strong> marque une évolution de style...</p>
-  <h3>2025 : Anomalia - NEW SAME FIGHT</h3>
-  <blockquote>"est nouveau style, nouvelle école, nouvelle époque, nouveau deal Ala belleck, nouveau missile, mec, nouvel homicide Balance les billets sales dans la bassine vite"</blockquote>
-</section>
+    <h2><span class="year">2024</span>New House EP & New Techno EP</h2>
+    <p>Toujours dans la continuité, Simon G simplifie les schémas, construit des morceaux plus lisibles, avec des titres explicites : New House et New Techno. C’est une nouvelle manière de voir la house et la techno, plus classique, moins de switches, mais plus de clarté.</p>
+    <p>Collision connaît ses heures de gloire tout en rencontrant encore des problèmes. 2024 marque une année où le projet se définit et se construit pleinement.</p>
 
-<section id="projets">
-  <h2>Projets à venir</h2>
-  <p>L’album <strong>Lyon Capital</strong> rempli exclusivement de featuring pour chaque style musical...</p>
-</section>
+    <h2><span class="year">2025</span>No Silence & Hard Summer EP</h2>
+    <p>La première sortie officielle sur label : No Silence, un morceau sans pause, symbole d’évolution.</p>
+    <p>Hard Summer EP, pensé en 2023 mais sorti en 2025, raconte des vacances d’été difficiles, mais laisse parfois une lueur d’espoir.</p>
 
-<footer>
-  <p>© Anomalia 2025</p>
-</footer>
+    <h2><span class="year">2025</span>NEW SAME FIGHT</h2>
+    <p>Tout est dans le titre : sauvons Collision.</p>
 
-<script>
-  // Fade-in sections au scroll
-  const sections = document.querySelectorAll('section');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting){
-        entry.target.classList.add('visible');
-      }
-    });
-  }, { threshold:0.1 });
+    <h2>Projets à venir</h2>
+    <p>Simon G prépare Lyon Capital, un album exclusivement composé de featuring pour maîtriser tous les styles et montrer la diversité musicale de Lyon.</p>
+    <p>Un live est prévu pour retracer tous les morceaux et marquer l’évolution de l’artiste.</p>
 
-  sections.forEach(section => observer.observe(section));
-</script>
+    <blockquote>
+      “C’est nouveau style, nouvelle école, nouvelle époque, nouveau deal. Ala belleck, nouveau missile, mec, nouvel homicide. Balance les billets sales dans la bassine vite.” – Booba
+    </blockquote>
 
+  </div>
 </body>
 </html>
