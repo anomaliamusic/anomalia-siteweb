@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anomalia Storytelling</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Arial', sans-serif; line-height:1.6; background:#111; color:#f1f1f1; }
+
+  /* Header */
+  header {
+    position: fixed;
+    top:0; left:0; width:100%;
+    background: rgba(0,0,0,0.9);
+    padding: 20px 0;
+    z-index: 100;
+    text-align:center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+  }
+  header h1 { font-size:2.5rem; color:#e91e63; transition:0.3s; }
+  header h1:hover { color:#ffeb3b; }
+
+  /* Navigation */
+  nav { margin-top:10px; }
+  nav a {
+    color:#f1f1f1; text-decoration:none; margin:0 10px;
+    padding:8px 15px; border:1px solid #e91e63; border-radius:5px;
+    transition:0.3s;
+  }
+  nav a:hover { background:#e91e63; color:#fff; }
+
+  /* Sections */
+  section { padding:120px 20px 60px; max-width:900px; margin:0 auto; opacity:0; transform:translateY(50px); transition: all 0.8s ease; }
+  section.visible { opacity:1; transform:translateY(0); }
+  section h2 { color:#e91e63; margin-bottom:20px; text-align:center; }
+  section p { margin-bottom:15px; font-size:1.1rem; }
+  blockquote { font-style:italic; color:#ffeb3b; margin:20px 0; padding-left:20px; border-left:3px solid #ffeb3b; }
+
+  /* Footer */
+  footer { text-align:center; padding:30px 20px; background:#0d0d0d; color:#aaa; margin-top:40px; }
+
+  /* Animation delay (staggered fade-in) */
+  section:nth-of-type(odd) { transition-delay: 0.2s; }
+  section:nth-of-type(even) { transition-delay: 0.4s; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Anomalia Storytelling</h1>
+  <nav>
+    <a href="#2016">2016</a>
+    <a href="#2017">2017</a>
+    <a href="#2018">2018</a>
+    <a href="#2019">2019</a>
+    <a href="#2020">2020</a>
+    <a href="#2022">2022</a>
+    <a href="#2023">2023</a>
+    <a href="#2024">2024</a>
+    <a href="#2025">2025</a>
+    <a href="#projets">Projets</a>
+  </nav>
+</header>
+
+<section id="2016">
+  <h2>2016 : Two Human Mistakes - Fusion & Human Mistake Records</h2>
+  <p>C'est deux amies, deux rivaux, deux inconnues, deux personnes qui se sont trouvées comme deux personnes perdues. L'histoire commence avec deux erreurs humaines.  
+  Née d'une passion commune et d'une envie de faire quelque chose de différent, Tom B et Simon G se renferment pendant toute une semaine d'été pour composer leur 1er LP...</p>
+</section>
+
+<section id="2017">
+  <h2>2017 : ??? - Anomalia</h2>
+  <p>Simon G écrit et compose probablement le morceau qui le représente le mieux, <strong>Call Two Point Five</strong>...</p>
+</section>
+
+<section id="2018">
+  <h2>2018 : Anomalia - Second Breath</h2>
+  <p>Toujours en attendant de pouvoir sortir Call Two Point Five dans de bonnes conditions, la vie de l'artiste continue...</p>
+</section>
+
+<section id="2019">
+  <h2>2019 : Elevate & Collision</h2>
+  <p>L'artiste se lance dans deux énormes projets sur Lyon : Elevate et Collision, associations dans le milieu du son...</p>
+</section>
+
+<section id="2020">
+  <h2>2020 : Anomalia - Second Breath & Call Two Point Five</h2>
+  <p>Après la pause, l'artiste sort enfin ses deux gros projets...</p>
+</section>
+
+<section id="2022">
+  <h2>2022 : Anomalia - A.N.O</h2>
+  <p>Malgré l’absence de succès, l’artiste continue et prépare 3 nouveaux projets pour 2023...</p>
+</section>
+
+<section id="2023">
+  <h2>2023 : Anomalia - Switch Beat EP</h2>
+  <p>Switch EP condense l’album précédent en seulement deux morceaux forts...</p>
+</section>
+
+<section id="2024">
+  <h2>2024 : New House EP & New Techno EP</h2>
+  <p>Continuation de la construction des morceaux avec des schémas plus simples...</p>
+</section>
+
+<section id="2025">
+  <h2>2025 : Anomalia - No Silence & Hard Summer EP</h2>
+  <p><strong>No Silence</strong> marque une évolution de style...</p>
+  <h3>2025 : Anomalia - NEW SAME FIGHT</h3>
+  <blockquote>"est nouveau style, nouvelle école, nouvelle époque, nouveau deal Ala belleck, nouveau missile, mec, nouvel homicide Balance les billets sales dans la bassine vite"</blockquote>
+</section>
+
+<section id="projets">
+  <h2>Projets à venir</h2>
+  <p>L’album <strong>Lyon Capital</strong> rempli exclusivement de featuring pour chaque style musical...</p>
+</section>
+
+<footer>
+  <p>© Anomalia 2025</p>
+</footer>
+
+<script>
+  // Fade-in sections au scroll
+  const sections = document.querySelectorAll('section');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold:0.1 });
+
+  sections.forEach(section => observer.observe(section));
+</script>
+
+</body>
+</html>
