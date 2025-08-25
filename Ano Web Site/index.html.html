@@ -1,187 +1,195 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>ANOMALIA.EXE – Timeline</title>
+  <meta charset="UTF-8">
+  <title>Anomalia Storytelling</title>
   <style>
-    /* === DA Windows 2000 rétro noir/rose pâle === */
-    :root{
-      --bg:#0d0d0d;
-      --win:#1a1a1a;
-      --hdr:#2b2b2b;
-      --pink:#f5c2e7; /* rose pâle */
-      --text:#f5c2e7;
-      --card:#111;
-      --shadow:rgba(245,194,231,0.3);
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:"Courier New",monospace}
-    .window{
-      width:min(980px,92vw);
-      margin:28px auto;
-      border:2px solid var(--pink);
-      background:var(--win);
-      box-shadow:0 0 18px var(--shadow);
-    }
-    .window-header{
-      display:flex;justify-content:space-between;align-items:center;
-      background:var(--hdr);color:var(--text);
-      padding:10px 14px;border-bottom:2px solid var(--pink);
-    }
-    .window-title{font-weight:bold;letter-spacing:.5px}
-    .window-controls{display:flex;gap:10px}
-    .ctrl{
-      width:36px;height:26px;display:grid;place-items:center;
-      border:2px solid var(--pink);background:var(--win);user-select:none
-    }
-    .window-body{padding:22px}
-    h1{margin:0 0 6px 0;font-size:22px}
-    .subtitle{opacity:.9;margin-bottom:22px}
-
-    /* Timeline */
-    .timeline-item{
-      border:1px solid var(--pink);
-      background:var(--card);
-      padding:16px 16px 20px 16px;
-      margin:18px 0;
-    }
-    .timeline-item h2{
-      margin:0 0 12px 0;font-size:18px;color:var(--text);
-      text-shadow:0 0 4px var(--pink);
-    }
-    .timeline-item p{line-height:1.55;font-size:14px;margin:10px 0}
-    blockquote{
-      margin:10px 0;padding-left:12px;border-left:2px solid var(--pink);
-      font-style:italic
+    /* Styles rétro écran */
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: "Courier New", monospace;
+      background: black;
+      color: #ff4da6; /* rose néon */
+      text-shadow: 0 0 5px #ff4da6;
+      overflow-x: hidden;
     }
 
-    /* Covers sous le texte, taille moyenne */
-    .album-cover{
-      display:block;margin:14px auto 0 auto;
-      max-width:320px;width:100%;height:auto;
-      border:2px solid var(--pink);
-      box-shadow:0 0 10px rgba(245,194,231,.4);
+    /* Effet vieux écran CRT */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: repeating-linear-gradient(
+        rgba(255, 255, 255, 0.05) 0px,
+        rgba(255, 255, 255, 0.05) 1px,
+        transparent 2px,
+        transparent 4px
+      );
+      pointer-events: none;
+      z-index: 999;
     }
-    .multi-covers{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:8px}
-    .multi-covers img{max-width:280px;width:100%;height:auto;border:2px solid var(--pink);box-shadow:0 0 10px rgba(245,194,231,.4)}
 
-    footer{
-      border-top:2px solid var(--pink);
-      margin-top:26px;padding-top:16px;text-align:center;font-size:14px
+    h1 {
+      text-align: center;
+      font-size: 2.2em;
+      margin-bottom: 20px;
+      text-transform: uppercase;
     }
 
-    /* petit bonus rétro */
-    .divider{height:2px;background:var(--pink);opacity:.5;margin:10px 0 0 0}
+    .timeline {
+      max-width: 900px;
+      margin: auto;
+      line-height: 1.5;
+    }
+
+    .year {
+      font-size: 1.3em;
+      margin-top: 25px;
+      color: #fff;
+    }
+
+    .entry {
+      margin-bottom: 20px;
+    }
+
+    .entry img {
+      width: 200px;
+      display: block;
+      margin: 10px 0;
+      border: 2px solid #ff4da6;
+    }
+
+    /* Hover */
+    .entry:hover {
+      background: rgba(255, 77, 166, 0.1);
+      transition: 0.3s;
+    }
+
+    /* Projets à venir */
+    details summary {
+      cursor: pointer;
+      font-weight: bold;
+      color: #ff4da6;
+    }
+
+    details[open] summary {
+      color: white;
+    }
+
+    /* Horloge */
+    #clock {
+      position: fixed;
+      bottom: 10px;
+      right: 20px;
+      font-size: 14px;
+      color: #ff4da6;
+    }
   </style>
 </head>
 <body>
-  <div class="window">
-    <div class="window-header">
-      <div class="window-title">ANOMALIA.EXE – Timeline</div>
-      <div class="window-controls" aria-hidden="true">
-        <div class="ctrl">_</div>
-        <div class="ctrl">▢</div>
-        <div class="ctrl">X</div>
-      </div>
+  <h1>Storytelling – Anomalia</h1>
+  <div class="timeline">
+    
+    <div class="entry">
+      <div class="year">2016 – Human Mistake Records & Two Human Mistakes - Fusion LP</div>
+      <img src="images/Fusion LP.png" alt="Fusion LP">
+      <p>Deux amies, deux rivales, deux personnes perdues qui se trouvent l’une l’autre : l’histoire commence avec deux erreurs humaines.
+      Nées d’une passion commune et d’une envie de faire quelque chose de différent, Tom B et Simon G se renferment pendant une semaine d’été pour composer leur premier LP.</p>
+      <p>Cet album raconte l’histoire d’une rupture et d’une relation intense vécue par l’une des deux, ainsi que la future histoire de l’autre. On y retrouve une mécompréhension du monde et une vision assez négative du futur.
+      Fusion naît alors, un album de musique ambient et expérimentale.</p>
+      <p>Désireuses de créer leur propre bulle artistique, les deux amies ouvrent leur label : Human Mistake Records. Le label fonctionne jusqu’en 2018 et compte 8 sorties, suivi d’Anomalia pour la 9ᵉ (nous y reviendrons plus tard).</p>
+      <p>Le label continue toujours d’exister en philosophie et travaille en secret pour accueillir de nouvelles sorties.</p>
     </div>
 
-    <div class="window-body">
-      <h1>Anomalia — 2016 → 2025</h1>
-      <div class="subtitle">Style Windows 2000 · Noir & Rose pâle · Storytelling complet + pochettes</div>
-      <div class="divider"></div>
-
-      <!-- 2016 -->
-      <div class="timeline-item">
-        <h2>2016 – Human Mistake Records & Two Human Mistakes - Fusion LP</h2>
-        <p>Deux amies, deux rivales, deux personnes perdues qui se trouvent l’une l’autre : l’histoire commence avec deux erreurs humaines.
-        Nées d’une passion commune et d’une envie de faire quelque chose de différent, Tom B et Simon G se renferment pendant une semaine d’été pour composer leur premier LP.</p>
-        <p>Cet album raconte l’histoire d’une rupture et d’une relation intense vécue par l’une des deux, ainsi que la future histoire de l’autre. On y retrouve une mécompréhension du monde et une vision assez négative du futur.
-        Fusion naît alors, un album de musique ambient et expérimentale.</p>
-        <p>Désireuses de créer leur propre bulle artistique, les deux amies ouvrent leur label : Human Mistake Records. Le label fonctionne jusqu’en 2018 et compte 8 sorties, suivi d’Anomalia pour la 9ᵉ (nous y reviendrons plus tard).</p>
-        <p>Le label continue toujours d’exister en philosophie et travaille en secret pour accueillir de nouvelles sorties.</p>
-        <img class="album-cover" src="images/Fusion  LP.png" alt="Fusion LP">
-      </div>
-
-      <!-- 2017 -->
-      <div class="timeline-item">
-        <h2>2017 – ??? - Call Two Point Five (single)</h2>
-        <p>Pour écrire la suite de l’histoire, le morceau initialement intitulé Anomalia devient finalement Call Two Point Five.
-        Si Fusion se termine sur une note mélancolique, ce titre expérimental de 7 minutes fait ressurgir l’intensité et l’agressivité de l’artiste.
-        Le morceau est également une référence à Metal Gear Solid 2.</p>
-        <img class="album-cover" src="images/Call Two Point Five.jpg" alt="Call Two Point Five (single)">
-      </div>
-
-      <!-- 2018 -->
-      <div class="timeline-item">
-        <h2>2018 – Anomalia - Second Breath LP</h2>
-        <p>L’énergie nouvelle et les responsabilités inspirent l’album intense Second Breath.
-        L’album se compose comme un souffle supplémentaire : les sons sont très chargés, dès le début comme pendant une montée à pied, et reviennent avec force à la fin, comme par magie, au moment le plus dur.</p>
-        <p>Le projet a été composé avec le strict minimum : vieux ordinateur, lag, pas d’enceintes… mais avec du travail acharné, on arrive toujours à créer ce qu’on veut.</p>
-        <img class="album-cover" src="images/Second Breath LP.png" alt="Second Breath LP">
-      </div>
-
-      <!-- 2019 -->
-      <div class="timeline-item">
-        <h2>2019 – Elevate & Collision (associations)</h2>
-        <p>« Saturation, fatigue… l’idée à l’époque était de partir à Paris. »</p>
-        <p>L’artiste est absorbé par deux projets majeurs à Lyon : Elevate et Collision, deux associations musicales.
-        Si Fusion a trouvé un écho en Russie, c’est grâce à ces associations que l’artiste commence à créer sa communauté.</p>
-        <!-- pas de pochette fournie pour 2019 -->
-      </div>
-
-      <!-- 2020–2022 -->
-      <div class="timeline-item">
-        <h2>2020 – 2022 – Anomalia - A.N.O LP (le projet perdu)</h2>
-        <p>Les années passent. Le confinement est long, mais le travail reprend avec un nouveau studio et du matériel professionnel.
-        Un nouvel album est en cours, mais très vite rattrapé par la vie : l’ordinateur contenant le projet disparaît. Deux ans de travail partis.</p>
-        <p>« J’ai vérifié mes clés USB, disques durs, liens SoundCloud et WeTransfer… je n’ai pas tout retrouvé. Mais la fin, 25 morceaux, je les ai écoutés, triés… et là, BOOM, devant moi, j’avais l’album. »</p>
-        <p>L’album ne rencontre aucun succès ni critique, mais l’artiste continue avec trois nouveaux projets pour 2023 : Switch Beat EP, New House EP, New Techno EP + un projet secret, avant d’annoncer la fin anticipée d’Anomalia.</p>
-        <img class="album-cover" src="images/A.N.O LP.jpg" alt="A.N.O LP">
-      </div>
-
-      <!-- 2023 -->
-      <div class="timeline-item">
-        <h2>2023 – Anomalia - Switch Beat EP</h2>
-        <p>Après 25 titres du précédent album, Switch Beat EP en condense l’essence en seulement 2 morceaux forts, avec de nombreuses transitions pour explorer de nouveaux styles au sein même des morceaux.</p>
-        <img class="album-cover" src="images/Switch Beat EP.jpg" alt="Switch Beat EP">
-      </div>
-
-      <!-- 2024 -->
-      <div class="timeline-item">
-        <h2>2024 – New House EP & New Techno EP</h2>
-        <p>Dans la continuité de sa progression, l’artiste construit des morceaux plus clairs et lisibles.
-        Collision connaît ses heures de gloire, malgré de nouveaux problèmes, et 2024 montre comment le projet veut être défini et construit.</p>
-        <div class="multi-covers">
-          <img src="images/New House EP.png" alt="New House EP">
-          <img src="images/New Techno EP.png" alt="New Techno EP">
-        </div>
-      </div>
-
-      <!-- 2025 -->
-      <div class="timeline-item">
-        <h2>2025 – Anomalia - No Silence & Hard Summer EP</h2>
-        <p>Première sortie en label : No Silence, un morceau sans pause, symbolisant une évolution de style et de genre.
-        Hard Summer, pensé initialement en 2023, raconte des vacances d’été difficiles mais ponctuées de lueurs d’espoir.</p>
-        <p>Cette espérance sera nécessaire : Collision rencontre à nouveau des problèmes majeurs.</p>
-        <!-- pochette dispo : Hard Summer -->
-        <img class="album-cover" src="images/Hard Summer EP.png" alt="Hard Summer EP">
-      </div>
-
-      <!-- Projets à venir -->
-      <div class="timeline-item">
-        <h2>Projets à venir</h2>
-        <p><strong>Anomalia – NEW SAME FIGHT (Septembre 2025)</strong></p>
-        <p><strong>Lyon Capital (projet secret)</strong><br>
-        Un album exclusivement composé de collaborations, représentant la diversité musicale de Lyon.</p>
-        <p><strong>To Be Continued Part. 4</strong><br>
-        Un live retraçant les anciens morceaux</p>
-        <p>Évolution personnelle : l’artiste se considère de moins en moins comme une anomalie et continue de grandir.</p>
-        <blockquote>« Nouveau style, nouvelle école, nouvelle époque, nouveau deal… » – B2OBA, inédit (Temps Mort)</blockquote>
-      </div>
-
-      <footer>© 2016–2025 Anomalia — Human Mistake Records</footer>
+    <div class="entry">
+      <div class="year">2017 – ??? - Call Two Point Five (single)</div>
+      <img src="images/Call Two Point Five.jpg" alt="Call Two Point Five">
+      <p>Pour écrire la suite de l’histoire, le morceau initialement intitulé Anomalia devient finalement Call Two Point Five.
+      Si Fusion se termine sur une note mélancolique, ce titre expérimental de 7 minutes fait ressurgir l’intensité et l’agressivité de l’artiste.
+      Le morceau est également une référence à Metal Gear Solid 2.</p>
     </div>
+
+    <div class="entry">
+      <div class="year">2018 – Anomalia - Second Breath LP</div>
+      <img src="images/Second Breath LP.png" alt="Second Breath LP">
+      <p>L’énergie nouvelle et les responsabilités inspirent l’album intense Second Breath.
+      L’album se compose comme un souffle supplémentaire : les sons sont très chargés, dès le début comme pendant une montée à pied, et reviennent avec force à la fin, comme par magie, au moment le plus dur.</p>
+      <p>Le projet a été composé avec le strict minimum : vieux ordinateur, lag, pas d’enceintes… mais avec du travail acharné, on arrive toujours à créer ce qu’on veut.</p>
+    </div>
+
+    <div class="entry">
+      <div class="year">2019 – Elevate & Collision (associations)</div>
+      <p>« Saturation, fatigue… l’idée à l’époque était de partir à Paris. »</p>
+      <p>L’artiste est absorbé par deux projets majeurs à Lyon : Elevate et Collision, deux associations musicales.
+      Si Fusion a trouvé un écho en Russie, c’est grâce à ces associations que l’artiste commence à créer sa communauté.</p>
+    </div>
+
+    <div class="entry">
+      <div class="year">2020 – 2022 – Anomalia - A.N.O LP (le projet perdu)</div>
+      <img src="images/A.N.O LP.jpg" alt="A.N.O LP">
+      <p>Les années passent. Le confinement est long, mais le travail reprend avec un nouveau studio et du matériel professionnel.
+      Un nouvel album est en cours, mais très vite rattrapé par la vie : l’ordinateur contenant le projet disparaît. Deux ans de travail partis.</p>
+      <p>« J’ai vérifié mes clés USB, disques durs, liens SoundCloud et WeTransfer… je n’ai pas tout retrouvé. Mais la fin, 25 morceaux, je les ai écoutés, triés… et là, BOOM, devant moi, j’avais l’album. »</p>
+      <p>L’album ne rencontre aucun succès ni critique, mais l’artiste continue avec trois nouveaux projets pour 2023 : Switch Beat EP, New House EP, New Techno EP + un projet secret, avant d’annoncer la fin anticipée d’Anomalia.</p>
+    </div>
+
+    <div class="entry">
+      <div class="year">2023 – Anomalia - Switch Beat EP</div>
+      <img src="images/Switch Beat EP.jpg" alt="Switch Beat EP">
+      <p>Après 25 titres du précédent album, Switch Beat EP en condense l’essence en seulement 2 morceaux forts, avec de nombreuses transitions pour explorer de nouveaux styles au sein même des morceaux.</p>
+    </div>
+
+    <div class="entry">
+      <div class="year">2024 – New House EP & New Techno EP</div>
+      <img src="images/New House EP.png" alt="New House EP">
+      <img src="images/New Techno EP.png" alt="New Techno EP">
+      <p>Dans la continuité de sa progression, l’artiste construit des morceaux plus clairs et lisibles.
+      Collision connaît ses heures de gloire, malgré de nouveaux problèmes, et 2024 montre comment le projet veut être défini et construit.</p>
+    </div>
+
+    <div class="entry">
+      <div class="year">2025 – Anomalia - No Silence & Hard Summer EP</div>
+      <img src="images/Hard Summer EP.png" alt="Hard Summer EP">
+      <p>Première sortie en label : No Silence, un morceau sans pause, symbolisant une évolution de style et de genre.
+      Hard Summer, pensé initialement en 2023, raconte des vacances d’été difficiles mais ponctuées de lueurs d’espoir.</p>
+      <p>Cette espérance sera nécessaire : Collision rencontre à nouveau des problèmes majeurs.</p>
+    </div>
+
+    <details>
+      <summary>Projets à venir</summary>
+      <div class="entry">
+        <div class="year">Anomalia – NEW SAME FIGHT (Septembre 2025)</div>
+        <p>Un album exclusivement composé de collaborations, représentant la diversité musicale de Lyon.</p>
+      </div>
+      <div class="entry">
+        <div class="year">Lyon Capital (projet secret)</div>
+        <p>Un live retraçant les anciens morceaux</p>
+      </div>
+      <div class="entry">
+        <div class="year">To Be Continued Part. 4</div>
+        <p>Un live retraçant les anciens morceaux</p>
+      </div>
+    </details>
+
+    <p style="margin-top:40px; text-align:center;">
+      « Nouveau style, nouvelle école, nouvelle époque, nouveau deal… » – B2OBA, inédit (Temps Mort)
+    </p>
   </div>
+
+  <!-- Horloge -->
+  <div id="clock"></div>
+  <script>
+    function updateClock() {
+      const now = new Date();
+      const h = String(now.getHours()).padStart(2, '0');
+      const m = String(now.getMinutes()).padStart(2, '0');
+      const s = String(now.getSeconds()).padStart(2, '0');
+      document.getElementById('clock').textContent = h+":"+m+":"+s;
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+  </script>
 </body>
 </html>
